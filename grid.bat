@@ -1,0 +1,1 @@
+node merge-images.js

@@ -1,0 +1,45 @@
+{
+  "input_dir": "raw_images",
+  "output_dir": "final_posts",
+  "output_filename": "grid_20260324",
+  "canvas_width": 1550,
+  "canvas_height": 1550,
+  "card_width": 480,
+  "card_height": 480,
+  "spacing": 20,
+  "radius": 20,
+  "columns": 3,
+  "rows": 3,
+  "force_jpg": true,
+  "jpg_quality": 85,
+  "background_color": { "r": 230, "g": 255, "b": 230, "alpha": 1 },
+  "text_overlay": {
+    "enable": true,
+    "title": "LINE 貼圖小幫手\n2026-03-24",
+    "align": "center",
+    "fontFamily": "Maruko Gothic CJKjp Medium",
+    "font_size": 50,
+    "offset_x": 100,
+    "offset_y": -100,
+    "customColors": {
+      "useAutoLuminance": false,
+      "forceTextColor": "#5fff5f",
+      "forceShadowColor": "rgba(0,0,0,0.5)"
+    },
+    "layout": {
+      "maxCharsPerLine": 25,
+      "fontSizeRatio": 0.061,
+      "paddingRatio": 0.057,
+      "bold": false,
+      "italic": false,
+      "shadowEnable": true,
+      "shadowOffset": 3,
+      "titleBgEnable": false,
+      "titleBgColor": "#000000",
+      "titleBgOpacity": 0.3,
+      "titleBgOffsetYRatio": 0,
+      "titleBgPaddingRatio": 0.23,
+      "titleBgRadius": 12
+    }
+  }
+}
