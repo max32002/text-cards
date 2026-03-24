@@ -1,5 +1,7 @@
 # TextCards - 九宮格卡片生成器
 
+![TextCards Preview](./preview/grid_20260324.jpg)
+
 這是一個基於 Node.js 與 Sharp 影像處理庫開發的自動化工具，旨在將多張圖片快速合併成專業的「九宮格卡片式（Card Style）」圖片。支援圓角處理、間距控制、自動置中排列，以及進階的文字疊加功能。
 
 ## 🌟 主要功能
