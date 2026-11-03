@@ -1,3 +1,10 @@
+# 使用方法：
+# 1. 使用預設的 grid.json 檔案執行：
+#    python script.py
+# 2. 指定自訂的 JSON 檔案執行：
+#    python script.py custom_grid.json
+
+import argparse
 import json
 import re
 from datetime import datetime
@@ -10,16 +17,13 @@ def update_grid_json(file_path: str | Path = "grid.json") -> None:
         data = json.load(f)
 
     today = datetime.now()
-    today_compact = today.strftime("%Y%m%d")      # e.g., 20260901
-    today_hyphen = today.strftime("%Y-%m-%d")     # e.g., 2026-09-01
+    today_compact = today.strftime("%Y%m%d")
+    today_hyphen = today.strftime("%Y-%m-%d")
 
-    # Update output_filename: grid_YYYYMMDD
     data["output_filename"] = f"grid_{today_compact}"
 
-    # Update title: replace existing date format (YYYY-MM-DD or YYYY/MM/DD) or append if not present
     if "text_overlay" in data and "title" in data["text_overlay"]:
         title = data["text_overlay"]["title"]
-        # Match YYYY-MM-DD or YYYY/MM/DD
         if re.search(r"\d{4}[-/]\d{2}[-/]\d{2}", title):
             data["text_overlay"]["title"] = re.sub(r"\d{4}[-/]\d{2}[-/]\d{2}", today_hyphen, title)
         else:
@@ -33,4 +37,7 @@ def update_grid_json(file_path: str | Path = "grid.json") -> None:
     print(f"  - title: {repr(data.get('text_overlay', {}).get('title'))}")
 
 if __name__ == "__main__":
-    update_grid_json()
+    parser = argparse.ArgumentParser(description="Update grid json file.")
+    parser.add_argument("file_path", nargs="?", default="grid.json", help="Path to the grid json file")
+    args = parser.parse_args()
+    update_grid_json(args.file_path)

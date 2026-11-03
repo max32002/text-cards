@@ -1,7 +1,7 @@
 {
   "input_dir": "raw_images",
   "output_dir": "final_posts",
-  "output_filename": "grid_20261027",
+  "output_filename": "grid_20261103",
   "canvas_width": 1550,
   "canvas_height": 1550,
   "card_width": 480,
@@ -20,7 +20,7 @@
   },
   "text_overlay": {
     "enable": true,
-    "title": "LINE 貼圖小幫手\n2026-10-27",
+    "title": "LINE 貼圖小幫手\n2026-11-03",
     "align": "center",
     "fontFamily": "Maruko Gothic CJKjp Medium",
     "font_size": 50,

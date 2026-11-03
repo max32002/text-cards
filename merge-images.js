@@ -1,14 +1,23 @@
+// 使用方法：
+// 1. 使用預設的 grid.json 檔案執行：
+//    node script.js
+// 2. 指定自訂的 JSON 檔案執行：
+//    node script.js custom_grid.json
+
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
+// 取得命令列參數，預設為 grid.json
+const configFile = process.argv[2] || 'grid.json';
+
 // 載入設定檔
 let config;
 try {
-  const configData = fs.readFileSync('grid.json', 'utf8');
+  const configData = fs.readFileSync(configFile, 'utf8');
   config = JSON.parse(configData);
 } catch (err) {
-  console.error('無法讀取 grid.json:', err);
+  console.error(`無法讀取 ${configFile}：`, err);
   process.exit(1);
 }
 
@@ -172,7 +181,7 @@ async function mergeImages() {
   }
 
   await imagePipeline.toFile(finalPath);
-  console.log(`成功完成！(微調偏移: X=${text_overlay.offset_x}, Y=${text_overlay.offset_y})`);
+  console.log(`成功完成！(使用設定檔: ${configFile}，微調偏移: X=${text_overlay.offset_x}, Y=${text_overlay.offset_y})`);
 }
 
 mergeImages().catch(err => {
